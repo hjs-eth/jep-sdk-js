@@ -1,0 +1,29 @@
+{
+  "name": "jep-erc-bridge",
+  "version": "1.0.0",
+  "description": "JEP protocol bridge to Ethereum - adding responsibility layer to ERC-8183 agent transactions",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy.js",
+    "deploy:sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
+    "console": "npx hardhat console"
+  },
+  "keywords": ["JEP", "ERC-8183", "AI-agents", "responsibility", "ethereum", "blockchain"],
+  "author": "JEP-ETH Contributors",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "chai": "^4.3.10",
+    "ethereum-waffle": "^4.0.10",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.22.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
