@@ -1,4 +1,4 @@
-import { ed25519 } from '@noble/ed25519';
+import * as ed from '@noble/ed25519';
 import { JEPReceipt, SignedJEPReceipt } from './types';
 import { hashReceipt } from './receipt';
 
@@ -18,7 +18,7 @@ export async function signReceipt(
     : privateKey;
   
   // 签名 (使用 @noble/ed25519)
-  const signatureBytes = await ed25519.sign(
+  const signatureBytes = await ed.sign(
     hexToBytes(receiptHash.replace('0x', '')),
     privateKeyBytes
   );
@@ -54,7 +54,7 @@ export async function verifySignature(
   const signatureBytes = hexToBytes(signedReceipt.proof.signature.replace('0x', ''));
   
   // 验证签名
-  return await ed25519.verify(
+  return await ed.verify(
     signatureBytes,
     hexToBytes(receiptHash.replace('0x', '')),
     publicKeyBytes
